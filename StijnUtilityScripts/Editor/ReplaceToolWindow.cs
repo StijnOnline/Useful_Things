@@ -10,10 +10,6 @@ public class ReplaceToolWindow : EditorWindow {
     private Object prefab = null;
     private GameObject originalObject = null;
     private GameObject replacedObject = null;
-    private string newTag;
-    private bool tagChildren;
-    private int newLayer;
-    private bool layerChildren;
     private bool keepParent;
 
     [MenuItem("Window/Replace Tool")]
@@ -23,23 +19,23 @@ public class ReplaceToolWindow : EditorWindow {
 
     void OnGUI() {
         GUILayout.Label("Copy Replace", EditorStyles.boldLabel);
-        GUILayout.Label(
-@"With this tool you only have to manually replace one object, this same action can then be used on multiple objects. This can be used to replace blockout objects into high poly models for example. This action is Undo-able.
-1. Drag an object that needs to be replaced in the 'Original Object' field
-2. Place a replacement object in the right position as if it were to replace the original object
-3. Drag this object in the 'Replaced Object' field
-4. Select other similar objects in the world that need to be replaced
-5. Press the 'Replace Selection' button"
-            , EditorStyles.wordWrappedLabel);
-        prefab = EditorGUILayout.ObjectField("Prefab",prefab, typeof(GameObject),false);
+        EditorGUILayout.HelpBox(
+@"With this tool you can replace many objects at the same time, while only having to replace one object manually.
+This action is Undo-able.
+1. Replace one object manually but keep the original
+2. Drag the objects in the fields below
+3. Select all other (similar) objects that you want to replace
+4. Press 'Replace Selection'"
+            , MessageType.Info);
+        prefab = EditorGUILayout.ObjectField("Replacement prefab", prefab, typeof(GameObject),false);
+        EditorGUILayout.Space(5);
         originalObject = (GameObject)EditorGUILayout.ObjectField("Original Object", originalObject, typeof(GameObject), true);
         replacedObject = (GameObject)EditorGUILayout.ObjectField("Replaced Object", replacedObject, typeof(GameObject),true);
-        keepParent = EditorGUILayout.Toggle("Keep parent", keepParent);
+
         EditorGUILayout.Space(10);
-        newTag = EditorGUILayout.TagField("New Tag", newTag);
-        tagChildren = EditorGUILayout.Toggle("Tag all children", tagChildren);
-        newLayer = EditorGUILayout.LayerField("New Layer", newLayer);
-        layerChildren = EditorGUILayout.Toggle("Set layer of all children", layerChildren);
+        GUILayout.Label("Options", EditorStyles.boldLabel);
+
+        keepParent = EditorGUILayout.Toggle("Keep same parent", keepParent);
         
         if(GUILayout.Button("Replace Selection")) {
             CopyReplace();
@@ -70,20 +66,6 @@ public class ReplaceToolWindow : EditorWindow {
             created.transform.rotation = referenceObject.transform.rotation * relativeRotation;
             created.transform.position = referenceObject.transform.position + referenceObject.transform.TransformDirection(relativePositionOffset);
             created.transform.localScale = replacedObject.transform.lossyScale;
-
-            created.layer = newLayer;
-            if(layerChildren) {
-                foreach(Transform child in created.transform) {
-                    child.gameObject.layer = newLayer;
-                }
-            }
-
-            created.tag = newTag;
-            if(tagChildren) {
-                foreach(Transform child in created.transform) {
-                    child.tag = newTag;
-                }
-            }
 
             created.transform.parent = referenceObject.transform.parent;
 
