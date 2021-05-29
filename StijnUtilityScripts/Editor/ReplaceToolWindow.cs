@@ -12,7 +12,7 @@ public class ReplaceToolWindow : EditorWindow {
     private GameObject replacedObject = null;
     private bool keepParent;
 
-    [MenuItem("Window/Replace Tool")]
+    [MenuItem("Custom/Replace Tool")]
     static void Init() {
         ReplaceToolWindow window = (ReplaceToolWindow)EditorWindow.GetWindow(typeof(ReplaceToolWindow));
     }

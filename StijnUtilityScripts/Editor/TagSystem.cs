@@ -1,11 +1,11 @@
-///Generates an enum with all Layers
+///Generates an enum with all Tags
 
 using UnityEditor;
 using UnityEngine;
 using System.IO;
 
 [InitializeOnLoad]
-class LayerSystem : UnityEditor.AssetModificationProcessor {
+class TagSystem : UnityEditor.AssetModificationProcessor {
 
     static bool importing = false;
 
@@ -18,30 +18,27 @@ class LayerSystem : UnityEditor.AssetModificationProcessor {
     static void GenerateNewLayersFile() {
         Debug.Log("Updating Layers Enum");
 
-        //Get layers
-        string[] layers = new string[32];
-        for ( int i = 0; i <= 31; i++ ) {
-            layers[i] = LayerMask.LayerToName(i);
-        }
+        //Get tags
+        string[] tags = UnityEditorInternal.InternalEditorUtility.tags;
 
         //Generate file contents
-        string fileContents = "public enum Layers {";
-        for ( int i = 0; i <= 31; i++ ) {
-            if ( layers[i].Length > 0 ) {
+        string fileContents = "public enum Tags {";
+        for ( int i = 0; i < tags.Length; i++ ) {
+            if ( tags[i].Length > 0 ) {
                 fileContents += "\n\t";//New Line + Tab
-                fileContents += layers[i].Replace(" ", "_") + "=" + i + ","; //LayerName=LayerInt,
+                fileContents += tags[i].Replace(" ", "_") + ","; //LayerName=LayerInt,
             }
         }
         fileContents += "\n}";
         
         //Write to file
-        string path = Application.dataPath + "/Generated/Layers.cs";
+        string path = Application.dataPath + "/Generated/Tags.cs";
         Directory.CreateDirectory(Application.dataPath + "/Generated");
         File.WriteAllText(path, fileContents);
 
         //Reimport
         importing = true;
-        AssetDatabase.ImportAsset("Assets/Generated/Layers.cs");
+        AssetDatabase.ImportAsset("Assets/Generated/Tags.cs");
         importing = false;
     }
 
