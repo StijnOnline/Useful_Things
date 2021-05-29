@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 public class VisibilityTargetabilityEditor : Editor {
 
-    [MenuItem("Custom/Visibilty/Show", false, 10)]
+    [MenuItem("Custom/Visibility/Show", false, 10)]
     static void ShowObject() {
         SceneVisibilityManager.instance.Show(Selection.gameObjects, true);
     }
 
-    [MenuItem("Custom/Visibilty/Hide", false, 10)]
+    [MenuItem("Custom/Visibility/Hide", false, 10)]
     static void Hide() {
         SceneVisibilityManager.instance.Hide(Selection.gameObjects, true);
     }
 
-    [MenuItem("Custom/Visibilty/Toggle visibilty", false, 10)]
+    [MenuItem("Custom/Visibility/Toggle visibilty", false, 10)]
     static void ToggleVisibilty() {
         foreach ( var item in Selection.gameObjects ) {
             SceneVisibilityManager.instance.ToggleVisibility(item, true);
