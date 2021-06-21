@@ -38,14 +38,14 @@ public class DebugLogger : ScriptableObject {
         }
     }
 
-    public static void Log( string message, string category) {
+    public static void Log( object message, string category) {
         if ( !_debugCategories.ContainsKey(category) ) {
             Debug.LogWarning("DebugLogger.Log: Couldn't find category " + category + ", using 'Default'");
             category = "Default";
         }
         if ( _debugCategories[category] ) Debug.Log(message);
     }
-    public static void LogWarning( string message, string category) {
+    public static void LogWarning( object message, string category) {
         if ( !_debugCategories.ContainsKey(category) ) {
             Debug.LogWarning("DebugLogger.Log: Couldn't find category " + category + ", using 'Default'");
             category = "Default";
@@ -53,7 +53,7 @@ public class DebugLogger : ScriptableObject {
         if(_debugCategories[category]) Debug.LogWarning(message);
 
     }
-    public static void LogError( string message, string category) {
+    public static void LogError( object message, string category) {
         if ( !_debugCategories.ContainsKey(category) ) {
             Debug.LogWarning("DebugLogger.Log: Couldn't find category " + category + ", using 'Default'");
             category = "Default";
