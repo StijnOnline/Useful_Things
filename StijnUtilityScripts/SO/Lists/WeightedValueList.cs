@@ -7,7 +7,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WeightedValueList", menuName = "ScriptableObjects/Variables/Lists/WeightedValueList")]
 public class WeightedValueList : ScriptableObject
 {
-    public float dropChance;
     [ReadOnly] public int totalWeight;
     public List<WeightedValue> Weights = new List<WeightedValue>();
 
@@ -41,14 +40,9 @@ public struct WeightedValue {
         }
 
         public override void OnGUI( Rect position, SerializedProperty property, GUIContent label ) {
-            // Find the SerializedProperties by name
             var _value = property.FindPropertyRelative(nameof(value));
             var _weigth = property.FindPropertyRelative(nameof(weigth));
-
-            // Using BeginProperty / EndProperty on the parent property means that
-            // prefab override logic works on the entire property.
             EditorGUI.BeginProperty(position, label, property);
-
 
             var valueRect = new Rect(position.x, position.y, position.width - weightPropertyWidth, position.height);
             var weigthRect = new Rect(position.xMax - weightPropertyWidth, position.y, weightPropertyWidth, position.height);
