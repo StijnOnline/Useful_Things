@@ -26,11 +26,13 @@ public class VisibilityTargetabilityEditor : Editor {
     [MenuItem("Custom/Selectable/Selectable", false, 10)]
     static void Selectable() {
         SceneVisibilityManager.instance.EnablePicking(Selection.gameObjects, true);
+        EditorApplication.RepaintHierarchyWindow();
     }
 
     [MenuItem("Custom/Selectable/Unselectable", false, 10)]
     static void Unselectable() {
         SceneVisibilityManager.instance.DisablePicking(Selection.gameObjects, true);
+        EditorApplication.RepaintHierarchyWindow();
     }
 
     [MenuItem("Custom/Selectable/Toggle selectable", false, 10)]
@@ -38,5 +40,6 @@ public class VisibilityTargetabilityEditor : Editor {
         foreach ( var item in Selection.gameObjects ) {
             SceneVisibilityManager.instance.TogglePicking(item, true);
         }
+        EditorApplication.RepaintHierarchyWindow();
     }
 }
