@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Temporary : MonoBehaviour
-{
-    public float lifetime;
-    void Start()
-    {
-        Destroy(gameObject, lifetime);
+namespace StijnUtility {
+    public class Temporary : MonoBehaviour {
+        public float lifetime;
+        void Start() {
+            Destroy(gameObject, lifetime);
+        }
     }
 }

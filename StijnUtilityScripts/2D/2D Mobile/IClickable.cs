@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IClickable
-{
-    void Click();
+namespace StijnUtility {
+    public interface IClickable {
+        void Click();
+    }
 }

@@ -2,5 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FloatVariable", menuName = "ScriptableObjects/Variables/FloatVariable")]
-public class FloatVariable : SOVariable<float> { }
+namespace StijnUtility.SO_Variables {
+    [CreateAssetMenu(fileName = "FloatVariable", menuName = "ScriptableObjects/Variables/FloatVariable")]
+    public class FloatVariable : SOVariable<float> { }
+}

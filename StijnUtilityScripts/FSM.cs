@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace StijnTest {
+namespace StijnUtility {
     public class FSM : MonoBehaviour{
 
         [ReadOnly] public List<State> states = new List<State>();

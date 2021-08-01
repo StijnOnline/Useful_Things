@@ -3,22 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SystemManager : MonoBehaviour {
+namespace StijnUtility {
+    public class SystemManager : MonoBehaviour {
 
-    [ReorderableList] public List<GameSystem> systems;
+        [ReorderableList] public List<GameSystem> systems;
 
-    void Start()
-    {
+        void Start() {
 
-        foreach ( GameSystem system in systems ) {
-            system.Init();
+            foreach ( GameSystem system in systems ) {
+                system.Init();
+            }
         }
-    }
 
-    void Update()
-    {
-        foreach ( GameSystem system in systems ) {
-            system.Update();
+        void Update() {
+            foreach ( GameSystem system in systems ) {
+                system.Update();
+            }
         }
-    }
+    } 
 }

@@ -1,12 +1,16 @@
-﻿using System.Collections;
+﻿using StijnUtility;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SOList<T> : ScriptableObject {
-    public bool clearOnLoad;
-    [NaughtyAttributes.ReorderableList] public List<T> List = new List<T>();
+namespace StijnUtility.SO_Variables.Lists {
 
-    private void OnEnable() {
-        if ( clearOnLoad ) List.Clear();
-    }
+    public abstract class SOList<T> : ScriptableObject, ICreatableScriptableObject {
+        public bool clearOnLoad;
+        [NaughtyAttributes.ReorderableList] public List<T> List = new List<T>();
+
+        private void OnEnable() {
+            if ( clearOnLoad ) List.Clear();
+        }
+    } 
 }

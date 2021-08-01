@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using StijnUtility;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SOVariable<T> : ScriptableObject {
-    public T Value;
+namespace StijnUtility.SO_Variables {
+    public abstract class SOVariable<T> : ScriptableObject, ICreatableScriptableObject {
+        public T Value;
+    }
 }

@@ -1,8 +1,12 @@
-﻿using System.Collections;
+﻿using StijnUtility;
+using System.Collections;
 using System.Collections.Generic;
 using UltEvents;
 using UnityEngine;
 
-public abstract class SOEvent<T> : ScriptableObject {
-    public UltEvent<T> @event;
+namespace StijnUtility.SO_Events {
+
+    public abstract class SOEvent<T> : ScriptableObject, ICreatableScriptableObject {
+        public UltEvent<T> @event;
+    } 
 }

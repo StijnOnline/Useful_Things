@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SVD.BehaviourTree {
+namespace StijnUtility.BehaviourTree {
     abstract class BehaviourTree {
         public BTNode masterNode;
         public BlackBoard blackBoard;     

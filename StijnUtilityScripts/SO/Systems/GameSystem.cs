@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿using StijnUtility;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class GameSystem : ScriptableObject
-{
-    public abstract void Init();
-    public abstract void Update();
+namespace StijnUtility {
+
+    public abstract class GameSystem : ScriptableObject, ICreatableScriptableObject {
+        public abstract void Init();
+        public abstract void Update();
+
+    }
 
 }

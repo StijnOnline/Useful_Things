@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IDraggable
-{
-    void Pick();
-    void UpdatePos(Vector2 pos);
-    void Drop();
+namespace StijnUtility {
+    public interface IDraggable {
+        void Pick();
+        void UpdatePos( Vector2 pos );
+        void Drop();
+    }
 }
