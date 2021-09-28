@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace StijnUtility.SO_Variables {
-    public abstract class SOVariable<T> : ScriptableObject, ICreatableScriptableObject {
+    public abstract class SOVariable<T> : ScriptableObject {
         public T Value;
     }
 }

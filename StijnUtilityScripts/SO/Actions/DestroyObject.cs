@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace StijnUtility.SO_Actions {
     [CreateAssetMenu(fileName = "DestroyObject", menuName = "ScriptableObjects/Action/DestroyObject")]
-    public class DestroyObject : ScriptableObject, ICreatableScriptableObject {
+    public class DestroyObject : ScriptableObject {
         public void Destroy( GameObject @object ) {
             Object.Destroy(@object);
         }

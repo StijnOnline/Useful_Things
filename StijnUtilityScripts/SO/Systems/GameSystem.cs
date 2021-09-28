@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace StijnUtility {
 
-    public abstract class GameSystem : ScriptableObject, ICreatableScriptableObject {
+    public abstract class GameSystem : ScriptableObject {
         public abstract void Init();
         public abstract void Update();
 

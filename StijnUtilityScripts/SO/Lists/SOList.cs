@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace StijnUtility.SO_Variables.Lists {
 
-    public abstract class SOList<T> : ScriptableObject, ICreatableScriptableObject {
+    public abstract class SOList<T> : ScriptableObject {
         public bool clearOnLoad;
         [NaughtyAttributes.ReorderableList] public List<T> List = new List<T>();
 

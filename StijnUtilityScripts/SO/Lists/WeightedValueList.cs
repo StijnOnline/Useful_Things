@@ -8,7 +8,7 @@ namespace StijnUtility.SO_Variables.Lists {
 
 
     [CreateAssetMenu(fileName = "WeightedValueList", menuName = "ScriptableObjects/Variables/Lists/WeightedValueList")]
-    public class WeightedValueList : ScriptableObject, ICreatableScriptableObject {
+    public class WeightedValueList : ScriptableObject {
         [ReadOnly] public int totalWeight;
         public List<WeightedValue> Weights = new List<WeightedValue>();
 

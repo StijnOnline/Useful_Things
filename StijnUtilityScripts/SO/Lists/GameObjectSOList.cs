@@ -5,5 +5,5 @@ using UnityEngine;
 namespace StijnUtility.SO_Variables.Lists {
 
     [CreateAssetMenu(fileName = "GameObjectList", menuName = "ScriptableObjects/Variables/Lists/GameObject")]
-    public class GameObjectSOList : SOList<GameObject>, ICreatableScriptableObject { } 
+    public class GameObjectSOList : SOList<GameObject> { } 
 }

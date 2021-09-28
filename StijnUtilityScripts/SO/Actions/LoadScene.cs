@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 namespace StijnUtility.SO_Actions {
     [CreateAssetMenu(fileName = "LoadScene", menuName = "ScriptableObjects/Action/LoadScene")]
-    public class LoadScene : ScriptableObject, ICreatableScriptableObject {
+    public class LoadScene : ScriptableObject {
 
         [Scene]
         public int scene;

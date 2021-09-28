@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace StijnUtility.SO_Actions {
     [CreateAssetMenu(fileName = "SetFrameRate", menuName = "ScriptableObjects/Action/SetFrameRate")]
-    public class SetFrameRate : ScriptableObject, ICreatableScriptableObject {
+    public class SetFrameRate : ScriptableObject {
 
         public void Set( int framerate ) {
             Application.targetFrameRate = framerate;

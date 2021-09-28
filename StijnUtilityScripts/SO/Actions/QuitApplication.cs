@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace StijnUtility.SO_Actions {
     [CreateAssetMenu(fileName = "QuitApplication", menuName = "ScriptableObjects/Action/QuitApplication")]
-    public class QuitApplication : ScriptableObject, ICreatableScriptableObject {
+    public class QuitApplication : ScriptableObject {
 
         public void Quit() {
 #if UNITY_EDITOR

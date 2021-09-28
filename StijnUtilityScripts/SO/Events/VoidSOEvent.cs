@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace StijnUtility.SO_Events {
     [CreateAssetMenu(fileName = "VoidEvent", menuName = "ScriptableObjects/Events/Void")]
-    public class VoidSOEvent : ScriptableObject, ICreatableScriptableObject {
+    public class VoidSOEvent : ScriptableObject {
         public UltEvent @event;
     } 
 }
