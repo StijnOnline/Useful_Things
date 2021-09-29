@@ -1,0 +1,10 @@
+REQUIRED:
+- Odin inspector
+	asset store
+- UltEvents
+	download https://kybernetik.com.au/ultevents/
+
+OPTIONAL:
+- TypeReference:
+	add via git https://github.com/SolidAlloy/SolidUtilities.git
+	add via git https://github.com/SolidAlloy/ClassTypeReference-for-Unity.git

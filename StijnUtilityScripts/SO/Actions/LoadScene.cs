@@ -1,4 +1,4 @@
-﻿using NaughtyAttributes;
+﻿using Sirenix.OdinInspector;
 using StijnUtility;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,8 +10,7 @@ namespace StijnUtility.SO_Actions {
     [CreateAssetMenu(fileName = "LoadScene", menuName = "ScriptableObjects/Action/LoadScene")]
     public class LoadScene : ScriptableObject {
 
-        [Scene]
-        public int scene;
+        public SceneReference scene;
 
         public void Load() {
             SceneManager.LoadScene(scene);

@@ -1,8 +1,8 @@
-﻿using NaughtyAttributes;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 namespace StijnUtility {
     public class FSM : MonoBehaviour{

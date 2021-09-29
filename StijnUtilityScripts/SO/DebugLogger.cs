@@ -2,7 +2,6 @@
 Custom DebugLogger with filtering capabilities
 */
 
-using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

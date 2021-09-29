@@ -1,4 +1,4 @@
-﻿using NaughtyAttributes;
+﻿using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +6,7 @@ using UnityEngine;
 namespace StijnUtility {
     public class SystemManager : MonoBehaviour {
 
-        [ReorderableList] public List<GameSystem> systems;
+        public List<GameSystem> systems;
 
         void Start() {
 

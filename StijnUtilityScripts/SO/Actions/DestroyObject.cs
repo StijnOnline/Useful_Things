@@ -1,5 +1,4 @@
-﻿using NaughtyAttributes;
-using StijnUtility;
+﻿using StijnUtility;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
